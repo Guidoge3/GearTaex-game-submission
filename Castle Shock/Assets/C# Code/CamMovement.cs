@@ -24,7 +24,7 @@ public class CamMovement : MonoBehaviour
 
         while (pointsInSpace.Count > 0 && pointsInSpace.Peek().Time <= Time.time - delay + Mathf.Epsilon)
         {
-            transform.position = Vector3.Lerp(transform.position.Normalize, pointsInSpace.Dequeue().Position + offset, Time.deltaTime * speed);
+            transform.position = Vector3.Lerp(transform.position, pointsInSpace.Dequeue().Position + offset, Time.deltaTime * speed);
         }
     }
 }
