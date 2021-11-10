@@ -461,9 +461,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ba3a0000
-      m_LastClickedID: 15034
-      m_ExpandedIDs: 60fbffffba3a0000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 60fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -705,20 +705,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/C# Code
+    - Assets/Sprites
   m_ViewMode: 1
   m_StartGridSize: 58
   m_LastFolders:
-  - Assets/C# Code
+  - Assets/Sprites
   m_LastFoldersGridSize: 58
-  m_LastProjectPath: C:\Users\guido\OneDrive\Bureaublad\Unity shit\GearTaex Games\Castle
+  m_LastProjectPath: C:\Users\guido\OneDrive\Bureaublad\Unity shit\GearTaex Games\GearTaex-game-submission\Castle
     Shock
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 783b0000
-    m_LastClickedID: 15224
+    m_SelectedIDs: 823b0000
+    m_LastClickedID: 15234
     m_ExpandedIDs: 00000000723b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -774,7 +774,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000a27a00006c2f070000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
