@@ -9,22 +9,26 @@ public class PlayerMovement : MonoBehaviour
     public float jumpPower = 5.0f;
 
     private Rigidbody2D _playerRigidbody;
+    private bool _facingRight;
 
     private void Start()
     {
         _playerRigidbody = GetComponent<Rigidbody2D>();
+        _facingRight = true;
     }
     private void Update()
     {
         MovePlayer();
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) && !_facingRight)
         {
             flip();
+            _facingRight = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) && _facingRight)
         {
             flip();
+            _facingRight = false;
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
