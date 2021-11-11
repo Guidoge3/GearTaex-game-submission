@@ -7,8 +7,19 @@ public class PlayerMovement : MonoBehaviour
 {
     public float playerSpeed = 5.0f;
     public float jumpPower = 5.0f;
+    public float gravity = -9.81f;
+
+
+    public Transform groundCheck;
+    public float groundDistance = 0.4f;
+    public LayerMask groundMask;
 
     private Rigidbody2D _playerRigidbody;
+
+    bool isGrounded;
+    Vector2 velocity;
+
+
 
     private void Start()
     {
@@ -16,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
         MovePlayer();
         if (Input.GetKeyDown(KeyCode.D))
         {
@@ -27,20 +40,22 @@ public class PlayerMovement : MonoBehaviour
             flip();
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
-            Jump();
+        if (isGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            velocity.y = Mathf.Sqrt(jumpPower * -2f * gravity);
+        }
+
+        velocity.y += gravity * Time.deltaTime;
     }
     private void MovePlayer()
     {
         var horizontalInput = Input.GetAxisRaw("Horizontal");
         _playerRigidbody.velocity = new Vector2(horizontalInput * playerSpeed, _playerRigidbody.velocity.y);
-    }
-    private void Jump() => _playerRigidbody.AddForce(transform.up = new Vector2(0, jumpPower));
-
-    private bool IsGrounded()
-    {
-        var groundCheck = Physics2D.Raycast(transform.position, Vector2.down, 1f);
-        return groundCheck.collider != null && groundCheck.collider.CompareTag("Ground");
     }
 
     private void flip()

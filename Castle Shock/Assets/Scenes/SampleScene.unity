@@ -278,15 +278,15 @@ MonoBehaviour:
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
-  m_XDamping: 0.75
-  m_YDamping: 0.25
+  m_XDamping: 1
+  m_YDamping: 0.35
   m_ZDamping: 0
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_CameraDistance: 10
-  m_DeadZoneWidth: 0.175
-  m_DeadZoneHeight: 0.1
+  m_DeadZoneWidth: 0.01
+  m_DeadZoneHeight: 0.01
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
   m_SoftZoneWidth: 0.8
@@ -372,7 +372,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 5.9
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -396,7 +396,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.15, y: -1.35, z: -10}
+  m_LocalPosition: {x: -16.14, y: -1.35, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -492,6 +492,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpeed: 5.5
   jumpPower: 5
+  gravity: -9.81
+  groundCheck: {fileID: 546652212}
+  groundDistance: 0.4
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!23 &527653843
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -547,7 +553,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527653841}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.15, y: -1.35, z: 0}
+  m_LocalPosition: {x: -16.14, y: -1.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 546652212}
@@ -604,7 +610,7 @@ GameObject:
   - component: {fileID: 533856021}
   - component: {fileID: 533856020}
   - component: {fileID: 533856019}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Main ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1132,7 +1138,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1810689037}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.15, y: -1.35, z: -10}
+  m_LocalPosition: {x: -16.14, y: -1.35, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 463184795}
@@ -1161,7 +1167,7 @@ MonoBehaviour:
   m_Follow: {fileID: 527653845}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 6
+    OrthographicSize: 5.9
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -1277,7 +1283,6 @@ GameObject:
   - component: {fileID: 2145130336}
   - component: {fileID: 2145130335}
   - component: {fileID: 2145130337}
-  - component: {fileID: 2145130338}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -1365,22 +1370,3 @@ MonoBehaviour:
   firePoint: {fileID: 387895761}
   bulletPrefab: {fileID: 1691594096151592884, guid: c7eef5985894d1f499a17d9d5a8dff7e,
     type: 3}
---- !u!95 &2145130338
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2145130334}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fa6a053ef0a790e4bbdc959d990b94d5, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0

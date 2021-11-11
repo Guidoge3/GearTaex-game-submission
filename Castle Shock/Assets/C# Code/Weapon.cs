@@ -1,13 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class Weapon : MonoBehaviour
 {
+    //private Animator anim;
+
+
     public Transform firePoint;
     public GameObject bulletPrefab;
 
     private float reloadTime = 0.4f;
+
+    void Start()
+    {
+        //anim = GetComponent<Animator>();
+    }
 
 
     void Update()
@@ -23,6 +32,6 @@ public class Weapon : MonoBehaviour
     void Shoot()
     {
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-
+        //anim.SetBool("Fire", true);
     }
 }
