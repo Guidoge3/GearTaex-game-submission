@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMask;
 
     private Rigidbody2D _playerRigidbody;
+    private bool _facingRight;
 
     bool isGrounded;
     Vector2 velocity;
@@ -24,20 +25,23 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         _playerRigidbody = GetComponent<Rigidbody2D>();
+        _facingRight = true;
     }
     private void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         MovePlayer();
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) && !_facingRight)
         {
             flip();
+            _facingRight = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) && _facingRight)
         {
             flip();
+            _facingRight = false;
         }
 
         if (isGrounded && velocity.y < 0)

@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":-16.946533203125,"y":-0.2039787471294403,"z":1.2619324922561646},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":8.221559524536133,"orthographic":true}
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":-13.168550491333008,"y":-7.874512672424316,"z":22.814199447631837},"rotation":{"x":0.14217771589756013,"y":0.003962388727813959,"z":-0.0002004390407819301,"w":0.9898438453674316},"size":14.282322883605957,"orthographic":false}
+>>>>>>> refs/remotes/origin/main
